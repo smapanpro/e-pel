@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pencatatan pelanggaran siswa E-PEL SMAPAN SMA Negeri 1 Paiton."
+    />
+    <title>Catat Pelanggaran | E-PEL SMAPAN</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png" />
+    <link rel="stylesheet" href="assets/css/catat.css" />
+  </head>
+  <body class="app-body">
+    <div class="page">
+      <header class="page-header">
+        <div class="page-header__inner">
+          <a class="brand" href="index.html">
+            <img src="assets/img/logo.png" alt="Logo SMA Negeri 1 Paiton" width="40" height="40" />
+            <span class="brand__text">
+              <strong>E-PEL SMAPAN</strong><br />
+              <small>SMA Negeri 1 Paiton</small>
+            </span>
+          </a>
+          <a class="back-link" href="index.html">Kembali</a>
+        </div>
+      </header>
+
+      <hr />
+
+      <main class="content">
+        <div class="page-intro">
+          <h1>Catat Pelanggaran Siswa</h1>
+          <p>Isi data siswa dan detail pelanggaran, lalu simpan.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="steps__item is-active"><span>01</span> <strong>Data siswa</strong></li>
+          <li class="steps__item"><span>02</span> <strong>Detail pelanggaran</strong></li>
+          <li class="steps__item"><span>03</span> <strong>Simpan catatan</strong></li>
+        </ol>
+
+        <div class="alert" id="success-alert" role="status" aria-live="polite">
+          <span id="success-message">Pelanggaran berhasil dicatat.</span>
+        </div>
+
+        <form id="violation-form" novalidate>
+        <section class="panel">
+          <div class="panel__head">
+            <span class="panel__step">01</span>
+            <div>
+              <h3>Data Siswa</h3>
+              <p>Masukkan identitas siswa yang melakukan pelanggaran.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="student-name">Nama Siswa</label>
+              <input
+                id="student-name"
+                name="studentName"
+                type="text"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="student-nisn">NISN</label>
+              <input
+                id="student-nisn"
+                name="studentNisn"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <div class="form-field form-field--full">
+              <label for="student-class">Kelas</label>
+              <select id="student-class" name="studentClass" required>
+                <option value="" disabled selected>Pilih kelas</option>
+                <option value="X.1">X.1</option>
+                <option value="X.2">X.2</option>
+                <option value="X.3">X.3</option>
+                <option value="X.4">X.4</option>
+                <option value="X.5">X.5</option>
+                <option value="X.6">X.6</option>
+                <option value="X.7">X.7</option>
+                <option value="X.8">X.8</option>
+                <option value="X.9">X.9</option>
+                <option value="X.10">X.10</option>
+                <option value="XI SAINSTEK 1">XI SAINSTEK 1</option>
+                <option value="XI SAINSTEK 2">XI SAINSTEK 2</option>
+                <option value="XI BIOSAINS 1">XI BIOSAINS 1</option>
+                <option value="XI BIOSAINS 2">XI BIOSAINS 2</option>
+                <option value="XI BIOSAINS 3">XI BIOSAINS 3</option>
+                <option value="XI SOSHUM 1">XI SOSHUM 1</option>
+                <option value="XI SOSHUM 2">XI SOSHUM 2</option>
+                <option value="XI SOSHUM 3">XI SOSHUM 3</option>
+                <option value="XI SOSHUM 4">XI SOSHUM 4</option>
+                <option value="XI SOSHUM 5">XI SOSHUM 5</option>
+                <option value="XII SAINSTEK 1">XII SAINSTEK 1</option>
+                <option value="XII SAINSTEK 2">XII SAINSTEK 2</option>
+                <option value="XII BIOSAINS 1">XII BIOSAINS 1</option>
+                <option value="XII BIOSAINS 2">XII BIOSAINS 2</option>
+                <option value="XII BIOSAINS 3">XII BIOSAINS 3</option>
+                <option value="XII SOSHUM 1">XII SOSHUM 1</option>
+                <option value="XII SOSHUM 2">XII SOSHUM 2</option>
+                <option value="XII SOSHUM 3">XII SOSHUM 3</option>
+                <option value="XII SOSHUM 4">XII SOSHUM 4</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__head">
+            <span class="panel__step">02</span>
+            <div>
+              <h3>Detail Pelanggaran</h3>
+              <p>Pilih jenis pelanggaran, poin akan terisi otomatis.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="violation-date">Tanggal</label>
+              <input id="violation-date" name="violationDate" type="date" required />
+            </div>
+
+            <div class="form-field">
+              <label for="violation-points">Poin Pelanggaran</label>
+              <input id="violation-points" name="violationPoints" type="text" value="-" readonly />
+            </div>
+
+            <div class="form-field form-field--full">
+              <label for="violation-type">Jenis Pelanggaran</label>
+              <select id="violation-type" name="violationType" required>
+                <option value="" data-points="" disabled selected>Pilih jenis pelanggaran</option>
+                <option data-points="5">Terlambat Masuk Sekolah</option>
+                <option data-points="5">Tidak Memakai Atribut Lengkap</option>
+                <option data-points="10">Tidak Mengikuti Pelajaran</option>
+                <option data-points="10">Membolos</option>
+                <option data-points="15">Memakai Gadget Saat KBM</option>
+                <option data-points="15">Berkata Kasar / Tidak Sopan</option>
+                <option data-points="25">Merokok di Lingkungan Sekolah</option>
+                <option data-points="50">Berkelahi</option>
+              </select>
+            </div>
+
+            <div class="form-field form-field--full">
+              <label for="violation-note">Keterangan <span class="is-optional">(opsional)</span></label>
+              <textarea
+                id="violation-note"
+                name="violationNote"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="summary-card" aria-live="polite">
+          <div class="summary-card__points">
+            <span>Total Poin</span>
+            <p><strong id="summary-points">0</strong> <small>poin</small></p>
+          </div>
+          <div class="summary-card__detail">
+            <span>Ringkasan</span>
+            <strong id="summary-student">Belum ada siswa</strong>
+            <p id="summary-type">Belum ada jenis pelanggaran</p>
+          </div>
+        </section>
+
+        <div class="form-actions">
+          <a class="button button--ghost" href="index.html">Batal</a>
+          <button class="button button--primary" type="submit">Simpan Pelanggaran</button>
+        </div>
+      </form>
+
+      <p class="content-note">Data pelanggaran disimpan langsung ke spreadsheet E-PEL SMAPAN.</p>
+    </main>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/catat.js"></script>
+  </body>
+</html>

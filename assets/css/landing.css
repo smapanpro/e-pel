@@ -1,0 +1,134 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+  background: #f4f4f4;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page {
+  max-width: 720px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #999;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #999;
+  margin: 16px 0;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-header__logo {
+  width: 56px;
+  height: 56px;
+}
+
+.site-header__name {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.site-header__app {
+  font-size: 18px;
+  font-weight: bold;
+  color: #003366;
+}
+
+/* Konten utama */
+.content {
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+.content h1 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.description {
+  margin: 0 auto 20px;
+  max-width: 560px;
+}
+
+.action {
+  margin: 20px 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  background: #e0e0e0;
+  border: 2px outset #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background: #d5d5d5;
+}
+
+.button:active {
+  border-style: inset;
+}
+
+.tagline {
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+}
+
+@media (max-width: 480px) {
+  .page {
+    margin: 10px;
+    padding: 14px;
+  }
+
+  .content h1 {
+    font-size: 26px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
